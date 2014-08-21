@@ -13,7 +13,7 @@ args = args.map(function(arg){
   return arg;
 });
 
-function(callback) {
+var run = function(callback) {
   exec(
     'cd ' + path + ';fcm ' + args.join(' '),
     function(error, stdout, stderr) {
@@ -24,3 +24,7 @@ function(callback) {
     }
   );
 };
+
+run(function(status) {
+  console.log(status);
+});
