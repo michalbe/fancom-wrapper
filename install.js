@@ -19,19 +19,16 @@ var download = function(url, dest, cb) {
   });
 };
 
-module.exports = function(callback) {
+var init = function(callback) {
   each(
     files,
     function(file, cb){
       download(url + file, destination + file, cb);
     },
     function(data){
-      callback(data);
+      callback();
     }
   );
 };
 
-
-module.exports(function(elo){
-  console.log(elo);
-});
+init();
