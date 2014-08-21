@@ -8,6 +8,9 @@
     "jshint": "^2.5.4",
     "precommit-hook": "^1.0.7"
   },
+  "bin": {
+    "fcm": "./index.js"
+  },
   "scripts": {
     "test": "node tests/fancom-wrapper-tests.js",
     "install": "node install.js",
