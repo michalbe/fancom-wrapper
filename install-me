@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Downloading fancom..."
+curl https://raw.githubusercontent.com/michalbe/fancom/master/fancom > fancom
+curl https://raw.githubusercontent.com/michalbe/fancom/master/.emo > .emo
+
+echo "Configuring..."
+chmod 777 fancom
+
+echo "Done."
+echo "Usage:"
+echo "fancom 'commit message'"
