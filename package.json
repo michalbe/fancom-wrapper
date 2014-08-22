@@ -1,6 +1,6 @@
 {
   "name": "fancom",
-  "version": "0.3.19",
+  "version": "0.4.13",
   "author": "Michał Budzyński <michal@virtualdesign.pl>",
   "repository": "git@github.com:michalbe/fancom-wrapper.git",
   "devDependencies": {
