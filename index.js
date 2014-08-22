@@ -5,27 +5,31 @@ var args = process.argv;
 var exec = require('child_process').exec;
 var path = process.cwd();
 
-args = args.slice(2, args.length);
+if (args.length > 2) {
+  args = args.slice(2, args.length);
 
-args = args.map(function(arg){
-  if (arg.indexOf(' ') > -1) {
-    arg = '"' + arg + '"';
-  }
-  return arg;
-});
+  args = args.map(function(arg){
+    if (arg.indexOf(' ') > -1) {
+      arg = '"' + arg + '"';
+    }
+    return arg;
+  });
+} else {
+  args = [];
+}
 
 var run = function(callback) {
   exec(
-    'cd ' + path + ';fcm ' + args.join(' '),
+    'cd ' + path + ';' + __dirname + '/fancom ' + args.join(' '),
     function(error, stdout, stderr) {
       if (error) {
-        throw new Error('Somethings wrong.');
+        throw new Error(error);
       }
-      callback(error, 'Fancom OK.');
+      callback(error, stdout);
     }
   );
 };
 
-run(function(status) {
+run(function(err, status) {
   console.log(status);
 });
