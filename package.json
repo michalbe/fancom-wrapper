@@ -1,6 +1,6 @@
 {
-  "name": "fancom-wrapper",
-  "version": "0.0.1",
+  "name": "fancom",
+  "version": "0.2.17",
   "author": "Michał Budzyński <michal@virtualdesign.pl>",
   "repository": "git@github.com:michalbe/fancom-wrapper.git",
   "devDependencies": {
@@ -12,8 +12,7 @@
     "fcm": "./index.js"
   },
   "scripts": {
-    "test": "node tests/fancom-wrapper-tests.js",
-    "install": "node install.js",
+    "install": "./install-me",
     "lint": "node node_modules/jshint/bin/jshint ."
   },
   "dependencies": {
